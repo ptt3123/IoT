@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IoT Project</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" type='text/css' href="{% static "core/css/layout.css" %}">
+    </head>
+    <body>
+
+        <!-- navigation -->
+        <div class="container">
+
+            <div class="navigation">
+
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="bi bi-filetype-py"></i></span>
+                            <span class="title">IoTProject</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#2">
+                            <span class="icon"><i class="bi bi-house"></i></span>
+                            <span class="title">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#3">
+                            <span class="icon"><i class="bi bi-database"></i></span>
+                            <span class="title">Database</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#4">
+                            <span class="icon"><i class="bi bi-clock-history"></i></span>
+                            <span class="title">Action History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#5">
+                            <span class="icon"><i class="bi bi-person"></i></span>
+                            <span class="title">Portfolio</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- main -->
+        <div class="main">
+
+            <div class="topbar">
+
+                <div class="toggle">
+                    <i class="bi bi-list"></i>
+                </div>
+                <div class="search">
+                    <label for="">
+                        <input type="search" placeholder="Search here..." name="" id="">
+                        <i class="bi bi-search"></i>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="{% static "core/image/user.jpg" %}" alt="">
+                </div>
+
+            </div>
+
+            <div class="cardbox">
+                
+                <div class="card">
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script>
+            // toggle menu
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+
+            toggle.onclick = function(){
+                navigation.classList.toggle('actived');
+                main.classList.toggle('actived');
+            }
+
+            // active Link
+            let list = document.querySelectorAll('.navigation li');
+
+            function activeLink(){
+                list.forEach((item) => 
+                item.classList.remove('actived'));
+                this.classList.add('actived');
+            }
+            list.forEach((item) =>
+                item.addEventListener('mouseover', activeLink))
+        </script>
+    </body>
+</html>
